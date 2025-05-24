@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berita Viral Hari Ini</title>
+  <link rel="icon" href="https://i.im.ge/2025/05/24/vzYAyM.warganetnews.png" type="image/png">
+</head>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #007acc;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      margin-right: 20px;
+    }
+
+    .logo img {
+      height: 60px;
+      border-radius: 10px;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .header-text p {
+      margin-top: 5px;
+      font-size: 0.95em;
+      color: #d0e9ff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .news {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .news-item {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      transition: 0.3s ease;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .news-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-item h2 {
+      margin: 0;
+      font-size: 1.3em;
+      color: #007acc;
+    }
+
+    .news-item .date {
+      color: #999;
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+
+    .news-item p {
+      margin-top: 10px;
+      color: #444;
+    }
+
+    footer {
+      background: #007acc;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer h3 {
+      margin-top: 0;
+      color: #fff;
+    }
+
+    .social {
+      margin: 10px 0;
+    }
+
+    .social a {
+      margin: 0 10px;
+      color: #ffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .social a:hover {
+      text-decoration: underline;
+    }
+
+    .contact {
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+
+    .popup {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #007acc;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: none;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="https://i.im.ge/2025/05/24/vzYAyM.warganetnews.png" alt="Logo Blog" />
+    </div>
+    <div class="header-text">
+      <h1>Warganet News</h1>
+      <p>Suara Netizen, Fakta Viral!!</p>
+    </div>
+  </header>
+
+  <!-- Konten Berita -->
+  <div class="container">
+    <div class="news">
+      <div class="news-item" data-url="https://warganetnews.github.io/berita1">
+        <h2>Indonesia akan luncurkan stimulus ekonomi untuk dorong konsumsi</h2>
+        <div class="date">24 Mei 2025</div>
+        <p>JAKARTA, 24 Mei (WargaNetNews) - Indonesia berencana mengumumkan langkah-langkah stimulus ekonomi pada 5 Juni...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <h3>Berita Viral Hari Ini</h3>
+    <div class="social">
+      <a href="https://instagram.com/warganetnews.id" target="_blank">Instagram</a> |
+      <a href="https://www.tiktok.com/@warganetnews.id" target="_blank">TikTok</a>
+    </div>
+    <div class="contact">
+      Hubungi kami: <a href="mailto:warganetnews.id@gmail.com">warganetnews@gmail.com</a>
+    </div>
+  </footer>
+
+  <!-- Pop-up Selamat Datang -->
+  <div class="popup" id="welcomePopup">
+    👋 Selamat datang di Warganet News
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll(".news-item");
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = 1;
+          item.style.transform = "translateY(0)";
+          item.style.animation = "slideIn 0.4s ease";
+        }, 150 * index);
+
+        item.addEventListener("click", () => {
+          const url = item.getAttribute("data-url");
+          if (url) window.location.href = url;
+        });
+      });
+
+      const popup = document.getElementById("welcomePopup");
+      popup.style.display = "block";
+      setTimeout(() => popup.style.display = "none", 1500);
+    });
+  </script>
+
+</body>
+</html>
