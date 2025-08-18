@@ -126,11 +126,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </header>
 
 <!-- Konten Utama Sementara -->
-<div id="content" style="text-align:center; padding: 40px;">
-  <h2>Selamat Datang di Warganet News</h2>
-  <p>Klik sebuah berita untuk membuka konten.</p>
+<div class="container"> 
+  <div class="news"> 
+    <div class="news-item" onclick="navigate(this, '1')> 
+      <h2>Nilai Ekonomi Kurban Tahun 2025 Diproyeksikan Turun Jadi Rp27,1 Triliun, Ada Apa?</h2> 
+      <div class="date">26 Mei 2025</div> 
+      <p>Nilai ekonomi kurban pada momen Idul Adha tahun 2025 diproyeksi menurun dari tahun sebelumnya...</p> 
+    </div> 
+  </div> 
 </div>
-
 <!-- Footer -->
 <footer>
   <h3>Berita Viral Hari Ini</h3>
@@ -149,6 +153,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 <!-- JS -->
+<script>
+  const articles = {
+    "1": {
+      title: "Nilai Ekonomi Kurban Tahun 2025 Diproyeksikan Turun Jadi Rp27,1 Triliun, Ada Apa?",
+      date: "26 Mei 2025",
+      image: "https://i.im.ge/2025/05/24/kurban2025.jpg",
+      content: `Nilai ekonomi kurban pada momen Idul Adha tahun 2025 diproyeksi menurun dari tahun sebelumnya.
+Pendapatan pedagang hewan kurban, daging, dan perlengkapan terkait mengalami penurunan signifikan.
+Para ahli ekonomi menyebut bahwa faktor inflasi dan daya beli masyarakat menjadi penyebab utama.
+Meskipun demikian, antusiasme masyarakat tetap ada, namun dengan skala lebih kecil.
+Beberapa program subsidi pemerintah juga turut membantu pedagang tetap bertahan.
+Prediksi ini menjadi perhatian bagi sektor ekonomi mikro di seluruh Indonesia.
+Pedagang berharap tren ini bisa membaik pada Idul Adha tahun berikutnya.`
+    },
+    "2": {
+      title: "Kasus Baru Influenza Musim Panas, Pemerintah Imbau Warga Waspada",
+      date: "25 Mei 2025",
+      image: "https://i.im.ge/2025/05/24/influenza.jpg",
+      content: `Pemerintah mengimbau masyarakat untuk menjaga kebersihan dan menghindari kerumunan.
+Kasus influenza tercatat meningkat di beberapa wilayah, terutama di kota-kota besar.
+Petugas kesehatan menekankan pentingnya vaksinasi dan protokol kesehatan.
+Sekolah dan tempat umum diminta untuk memperhatikan ventilasi dan sanitasi.
+Masyarakat diimbau segera memeriksakan diri jika mengalami gejala demam dan batuk.
+Informasi terbaru akan terus diperbarui melalui kanal resmi pemerintah.`
+    }
+  };
+
+  function navigate(id) {
+    const article = articles[id];
+    const container = document.querySelector('.container');
+    container.innerHTML = `
+      <div class="news-item">
+        <img src="${article.image}" alt="${article.title}">
+        <h2>${article.title}</h2>
+        <div class="date">${article.date}</div>
+        <p>${article.content}</p>
+      </div>
+    `;
+  }
+</script>
 <script>
   window.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("welcomePopup");
