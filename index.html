@@ -24,85 +24,137 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <style>
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f9f9f9;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-
-  header {
-    background: #007acc;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin-right: 20px;
-  }
-  .logo img {
-    height: 60px;
-    border-radius: 10px;
-  }
-  .header-text {
-    flex: 1;
-  }
-  .header-text h1 { margin: 0; font-size: 2em; }
-  .header-text p  { margin-top: 5px; font-size: 0.95em; color: #d0e9ff; }
-
-  footer {
-    background: #007acc;
-    color: #ccc;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-  }
-  footer h3 { margin-top: 0; color: #fff; }
-  .social    a { color: #fff; text-decoration: none; font-weight: bold; }
-  .social a:hover { text-decoration: underline; }
-
-  /* Floating WA */
-  .cs-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-  }
-  .cs-float:hover { transform: scale(1.1); }
-  .cs-float img { width: 30px; height: 30px; }
-
-  .popup {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #007acc;
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    animation: fadeIn 0.8s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+body { 
+  font-family: 'Segoe UI', sans-serif; 
+  background: #f9f9f9; 
+  margin: 0; 
+  padding: 0; 
+  color: #333; 
+} 
+header { 
+  background: #007acc; 
+  color: white; 
+  display: flex; 
+  align-items: center; 
+  padding: 20px; 
+  flex-wrap: wrap; 
+} 
+.logo { 
+  margin-right: 20px; 
+} 
+.logo img { 
+  height: 60px; 
+  border-radius: 10px; 
+} 
+.header-text { 
+  flex: 1; 
+} 
+.header-text h1 { 
+  margin: 0; 
+  font-size: 2em; 
+} 
+.header-text p { 
+  margin-top: 5px; 
+  font-size: 0.95em; 
+  color: #d0e9ff; 
+} 
+.container { 
+  max-width: 900px; 
+  margin: auto; 
+  padding: 30px 20px; 
+} 
+.news { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+} 
+.news-item { 
+  background: white; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+  transition: 0.3s ease; 
+  cursor: pointer; 
+  opacity: 0; 
+  transform: translateY(20px); 
+} 
+.news-item:hover { 
+  transform: translateY(-5px) scale(1.02); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+} 
+.news-item h2 { 
+  margin: 0; 
+  font-size: 1.3em; 
+  color: #007acc; 
+}
+  .news-item .date { 
+    color: #999; 
+    font-size: 0.9em; 
+    margin-top: 5px; 
+} 
+.news-item p { 
+  margin-top: 10px; 
+  color: #444; 
+} 
+footer { 
+  background: #007acc; 
+  color: #ccc; 
+  text-align: center; 
+  padding: 30px 20px; 
+  margin-top: 60px; 
+} 
+footer h3 { 
+  margin-top: 0; 
+  color: #fff; 
+} 
+.social { 
+  margin: 10px 0; 
+} 
+.social a { 
+  margin: 0 10px; 
+  color: #ffff; 
+  text-decoration: none; 
+  font-weight: bold; 
+} 
+.social a:hover { 
+  text-decoration: underline; 
+} 
+.contact { 
+  margin-top: 10px; 
+  font-size: 0.9em; 
+} 
+.popup { 
+  position: fixed; 
+  top: 20px; 
+  right: 20px; 
+  background: #007acc; 
+  color: #fff; 
+  padding: 15px 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  display: none; 
+  animation: fadeIn 0.8s ease forwards; 
+} 
+@keyframes fadeIn { 
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px); 
+  } 
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+} 
+@keyframes slideIn { 
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  } 
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+}
 </style>
 </head>
 
