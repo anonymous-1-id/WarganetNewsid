@@ -1,161 +1,277 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Berita Viral Hari Ini</title>
-  <link rel="icon" href="https://i.im.ge/2025/05/24/vzYAyM.warganetnews.png" type="image/x-icon">
 
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5WN5CM9T');</script>
-<!-- End Google Tag Manager -->
-
-  <!-- Google Tag (optional) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8PXES150P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G8PXES150P');
+<!DOCTYPE html>  <html lang="id">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>Berita Viral Hari Ini</title>  
+  <link rel="icon" href="https://i.im.ge/2025/05/24/vzYAyM.warganetnews.png" type="image/x-icon">  
+  <!-- Google Tag Manager -->  
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],  
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=  
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  
+})(window,document,'script','dataLayer','GTM-5WN5CM9T');</script>  
+<!-- End Google Tag Manager -->  
+</head>  
+  <!-- Google tag (gtag.js) -->  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8PXES150P"></script>  
+<script>  
+  window.dataLayer = window.dataLayer || [];  
+  function gtag(){dataLayer.push(arguments);}  
+  gtag('js', new Date());  gtag('config', 'G-G8PXES150P');
 </script>
 
-<style>
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f9f9f9;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
+  <style>  
+    body {  
+      font-family: 'Segoe UI', sans-serif;  
+      background: #f9f9f9;  
+      margin: 0;  
+      padding: 0;  
+      color: #333;  
+    }  
+  
+    header {  
+      background: #007acc;  
+      color: white;  
+      display: flex;  
+      align-items: center;  
+      padding: 20px;  
+      flex-wrap: wrap;  
+    }  
+  
+    .logo {  
+      margin-right: 20px;  
+    }  
+  
+    .logo img {  
+      height: 60px;  
+      border-radius: 10px;  
+    }  
+  
+    .header-text {  
+      flex: 1;  
+    }  
+  
+    .header-text h1 {  
+      margin: 0;  
+      font-size: 2em;  
+    }  
+  
+    .header-text p {  
+      margin-top: 5px;  
+      font-size: 0.95em;  
+      color: #d0e9ff;  
+    }  
+  
+    .container {  
+      max-width: 900px;  
+      margin: auto;  
+      padding: 30px 20px;  
+    }  
+  
+    .news {  
+      display: flex;  
+      flex-direction: column;  
+      gap: 20px;  
+    }  
+  
+    .news-item {  
+      background: white;  
+      padding: 20px;  
+      border-radius: 10px;  
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);  
+      transition: 0.3s ease;  
+      cursor: pointer;  
+      opacity: 0;  
+      transform: translateY(20px);  
+    }  
+  
+    .news-item:hover {  
+      transform: translateY(-5px) scale(1.02);  
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  
+    }  
+  
+    .news-item h2 {  
+      margin: 0;  
+      font-size: 1.3em;  
+      color: #007acc;  
+    }  
+  
+    .news-item .date {  
+      color: #999;  
+      font-size: 0.9em;  
+      margin-top: 5px;  
+    }  
+  
+    .news-item p {  
+      margin-top: 10px;  
+      color: #444;  
+    }  
+  
+    footer {  
+      background: #007acc;  
+      color: #ccc;  
+      text-align: center;  
+      padding: 30px 20px;  
+      margin-top: 60px;  
+    }  
+  
+    footer h3 {  
+      margin-top: 0;  
+      color: #fff;  
+    }  
+  
+    .social {  
+      margin: 10px 0;  
+    }  
+  
+    .social a {  
+      margin: 0 10px;  
+      color: #ffff;  
+      text-decoration: none;  
+      font-weight: bold;  
+    }  
+  
+    .social a:hover {  
+      text-decoration: underline;  
+    }  
+  
+    .contact {  
+      margin-top: 10px;  
+      font-size: 0.9em;  
+    }  
+  
+    .popup {  
+      position: fixed;  
+      top: 20px;  
+      right: 20px;  
+      background: #007acc;  
+      color: #fff;  
+      padding: 15px 20px;  
+      border-radius: 8px;  
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+      display: none;  
+      animation: fadeIn 0.8s ease forwards;  
+    }  
+  
+    @keyframes fadeIn {  
+      from { opacity: 0; transform: translateY(-10px); }  
+      to { opacity: 1; transform: translateY(0); }  
+    }  
+  
+    @keyframes slideIn {  
+      from { opacity: 0; transform: translateY(20px); }  
+      to { opacity: 1; transform: translateY(0); }  
+    }  
+  </style>  </head>  
+<body>  <!-- Customer Service Floating Bubble -->
 
-  header {
-    background: #007acc;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin-right: 20px;
-  }
-  .logo img {
-    height: 60px;
-    border-radius: 10px;
-  }
-  .header-text {
-    flex: 1;
-  }
-  .header-text h1 { margin: 0; font-size: 2em; }
-  .header-text p  { margin-top: 5px; font-size: 0.95em; color: #d0e9ff; }
-
-  footer {
-    background: #007acc;
-    color: #ccc;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-  }
-  footer h3 { margin-top: 0; color: #fff; }
-  .social    a { color: #fff; text-decoration: none; font-weight: bold; }
-  .social a:hover { text-decoration: underline; }
-
-  /* Floating WA */
-  .cs-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-  }
-  .cs-float:hover { transform: scale(1.1); }
-  .cs-float img { width: 30px; height: 30px; }
-
-  .popup {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #007acc;
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    animation: fadeIn 0.8s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-</style>
-</head>
-
-<body>
-
-<!-- Floating WA -->
-<a href="https://wa.me/6285602438829?text=Halo%20Customer%20Service%20WarganetNews.Id"
-   class="cs-float" target="_blank" rel="noopener">
-   <img src="https://img.icons8.com/ios-filled/50/ffffff/customer-support.png" alt="CS Icon" />
+<a href="https://wa.me/6285602438829?text=Halo%20Customer%20Service%20WarganetNews.Id"   
+class="cs-float" target="_blank" rel="noopener">
+<img src="https://img.icons8.com/ios-filled/50/ffffff/customer-support.png" alt="CS Icon" />
 </a>
 
-<!-- Header -->
-<header>
-  <div class="logo">
-    <img src="https://i.im.ge/2025/05/24/vzYAyM.warganetnews.png" alt="Logo Blog" />
-  </div>
-  <div class="header-text">
-    <h1>Warganet News</h1>
-    <p>Suara Netizen, Fakta Viral!!</p>
-  </div>
-</header>
+<style>  
+.cs-float {  
+  position: fixed;  
+  width: 60px;  
+  height: 60px;  
+  bottom: 20px;  
+  right: 20px;  
+  background-color: #007bff;  
+  color: #fff;  
+  border-radius: 50%;  
+  text-align: center;  
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);  
+  z-index: 999;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  transition: transform 0.3s ease;  
+}  
+.cs-float:hover {  
+  transform: scale(1.1);  
+}  
+.cs-float img {  
+  width: 30px;  
+  height: 30px;  
+}  
+</style>  <!-- Google Tag Manager (noscript) -->  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WN5CM9T"  
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- Konten Utama Sementara -->
-<div id="content" style="text-align:center; padding: 40px;">
-  <h2>Selamat Datang di Warganet News</h2>
-  <p>Klik sebuah berita untuk membuka konten.</p>
-</div>
-
-<!-- Footer -->
-<footer>
-  <h3>Berita Viral Hari Ini</h3>
-  <div class="social">
-    <a href="https://instagram.com/warganetnews.id" target="_blank">Instagram</a> |
-    <a href="https://www.tiktok.com/@warganetnews.id" target="_blank">TikTok</a>
-  </div>
-  <div class="contact">
-    Hubungi kami: <a href="mailto:warganetnews.id@gmail.com">warganetnews.id@gmail.com</a>
-  </div>
-</footer>
-
-<!-- Popup -->
-<div class="popup" id="welcomePopup">
-  👋 Selamat datang di Warganet News
-</div>
-
-<!-- JS -->
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const popup = document.getElementById("welcomePopup");
-    popup.style.display = "block";
-    setTimeout(() => popup.style.display = "none", 1500);
-  });
-</script>
-
-</body>
+<!-- End Google Tag Manager (noscript) -->    <!-- Header -->    <header>  
+    <div class="logo">  
+      <img src="https://i.im.ge/2025/05/24/vzYAyM.warganetnews.png" alt="Logo Blog" />  
+    </div>  
+    <div class="header-text">  
+      <h1>Warganet News</h1>  
+      <p>Suara Netizen, Fakta Viral!!</p>  
+    </div>  
+  </header>    <!-- Konten Berita -->    <div class="container">  
+     <div class="news">  
+      <div class="news-item" data-url="https://warganetnews.github.io/berita4">  
+        <h2>Nilai Ekonomi Kurban Tahun 2025 Diproyeksikan Turun Jadi Rp27,1 Triliun, Ada Apa?</h2>  
+        <div class="date">26 Mei 2025</div>  
+        <p>Nilai ekonomi kurban pada momen Idul Adha tahun 2025 diproyeksi menurun dari tahun sebelumnya...</p>  
+      </div>  
+    </div>  
+  </div>  
+  <div class="container">  
+     <div class="news">  
+      <div class="news-item" data-url="https://warganetnews.github.io/berita3">  
+        <h2>Jalur Konvoi Persib Minggu 25 Mei 2025: Pawai Mulai Jam Berapa?</h2>  
+        <div class="date">25 Mei 2025</div>  
+        <p>Konvoi Persib juara Liga 1 2025 akan digelar pada Minggu, 25 Mei. Cek rute lengkap dan jam konvoinya di bawah...</p>  
+      </div>  
+    </div>  
+  </div>  
+  <div class="container">  
+     <div class="news">  
+      <div class="news-item" data-url="https://warganetnews.github.io/berita2">  
+        <h2>Prabowo Puji China yang Konsisten Membela Rakyat Palestina: Membanggakan Kita Semua</h2>  
+        <div class="date">25 Mei 2025</div>  
+        <p>Prabowo menilai bahwa China konsisten dan tetap membela rakyat yang tertindas di seluruh dunia...</p>  
+      </div>  
+    </div>  
+  </div>  
+  <div class="container">  
+    <div class="news">  
+      <div class="news-item" data-url="https://warganetnews.github.io/berita1">  
+        <h2>Indonesia akan luncurkan stimulus ekonomi untuk dorong konsumsi</h2>  
+        <div class="date">24 Mei 2025</div>  
+        <p>JAKARTA, 24 Mei (WargaNetNews) - Indonesia berencana mengumumkan langkah-langkah stimulus ekonomi pada 5 Juni...</p>  
+      </div>  
+    </div>  
+  </div>    <!-- Footer -->    <footer>  
+    <h3>Berita Viral Hari Ini</h3>  
+    <div class="social">  
+      <a href="https://instagram.com/warganetnews.id" target="_blank">Instagram</a> |  
+      <a href="https://www.tiktok.com/@warganetnews.id" target="_blank">TikTok</a>  
+    </div>  
+    <div class="contact">  
+      Hubungi kami: <a href="mailto:warganetnews.id@gmail.com">warganetnews@gmail.com</a>  
+    </div>  
+  </footer>    <!-- Pop-up Selamat Datang -->    <div class="popup" id="welcomePopup">  
+    👋 Selamat datang di Warganet News  
+  </div>    <!-- JavaScript -->    <script>  
+    window.addEventListener("DOMContentLoaded", () => {  
+      const items = document.querySelectorAll(".news-item");  
+      items.forEach((item, index) => {  
+        setTimeout(() => {  
+          item.style.opacity = 1;  
+          item.style.transform = "translateY(0)";  
+          item.style.animation = "slideIn 0.4s ease";  
+        }, 150 * index);  
+  
+        item.addEventListener("click", () => {  
+          const url = item.getAttribute("data-url");  
+          if (url) window.location.href = url;  
+        });  
+      });  
+  
+      const popup = document.getElementById("welcomePopup");  
+      popup.style.display = "block";  
+      setTimeout(() => popup.style.display = "none", 1500);  
+    });  
+  </script>  </body>  
 </html>
