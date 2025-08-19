@@ -24,137 +24,85 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <style>
-body { 
-  font-family: 'Segoe UI', sans-serif; 
-  background: #f9f9f9; 
-  margin: 0; 
-  padding: 0; 
-  color: #333; 
-} 
-header { 
-  background: #007acc; 
-  color: white; 
-  display: flex; 
-  align-items: center; 
-  padding: 20px; 
-  flex-wrap: wrap; 
-} 
-.logo { 
-  margin-right: 20px; 
-} 
-.logo img { 
-  height: 60px; 
-  border-radius: 10px; 
-} 
-.header-text { 
-  flex: 1; 
-} 
-.header-text h1 { 
-  margin: 0; 
-  font-size: 2em; 
-} 
-.header-text p { 
-  margin-top: 5px; 
-  font-size: 0.95em; 
-  color: #d0e9ff; 
-} 
-.container { 
-  max-width: 900px; 
-  margin: auto; 
-  padding: 30px 20px; 
-} 
-.news { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 20px; 
-} 
-.news-item { 
-  background: white; 
-  padding: 20px; 
-  border-radius: 10px; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
-  transition: 0.3s ease; 
-  cursor: pointer; 
-  opacity: 0; 
-  transform: translateY(20px); 
-} 
-.news-item:hover { 
-  transform: translateY(-5px) scale(1.02); 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
-} 
-.news-item h2 { 
-  margin: 0; 
-  font-size: 1.3em; 
-  color: #007acc; 
-}
-  .news-item .date { 
-    color: #999; 
-    font-size: 0.9em; 
-    margin-top: 5px; 
-} 
-.news-item p { 
-  margin-top: 10px; 
-  color: #444; 
-} 
-footer { 
-  background: #007acc; 
-  color: #ccc; 
-  text-align: center; 
-  padding: 30px 20px; 
-  margin-top: 60px; 
-} 
-footer h3 { 
-  margin-top: 0; 
-  color: #fff; 
-} 
-.social { 
-  margin: 10px 0; 
-} 
-.social a { 
-  margin: 0 10px; 
-  color: #ffff; 
-  text-decoration: none; 
-  font-weight: bold; 
-} 
-.social a:hover { 
-  text-decoration: underline; 
-} 
-.contact { 
-  margin-top: 10px; 
-  font-size: 0.9em; 
-} 
-.popup { 
-  position: fixed; 
-  top: 20px; 
-  right: 20px; 
-  background: #007acc; 
-  color: #fff; 
-  padding: 15px 20px; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-  display: none; 
-  animation: fadeIn 0.8s ease forwards; 
-} 
-@keyframes fadeIn { 
-  from { 
-    opacity: 0; 
-    transform: translateY(-10px); 
-  } 
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  } 
-} 
-@keyframes slideIn { 
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
-  } 
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  } 
-}
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  header {
+    background: #007acc;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    margin-right: 20px;
+  }
+  .logo img {
+    height: 60px;
+    border-radius: 10px;
+  }
+  .header-text {
+    flex: 1;
+  }
+  .header-text h1 { margin: 0; font-size: 2em; }
+  .header-text p  { margin-top: 5px; font-size: 0.95em; color: #d0e9ff; }
+
+  footer {
+    background: #007acc;
+    color: #ccc;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+  }
+  footer h3 { margin-top: 0; color: #fff; }
+  .social    a { color: #fff; text-decoration: none; font-weight: bold; }
+  .social a:hover { text-decoration: underline; }
+
+  /* Floating WA */
+  .cs-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  .cs-float:hover { transform: scale(1.1); }
+  .cs-float img { width: 30px; height: 30px; }
+
+  .popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #007acc;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 </style>
 </head>
 
@@ -178,15 +126,11 @@ footer h3 {
 </header>
 
 <!-- Konten Utama Sementara -->
-<div class="container"> 
-  <div class="news"> 
-    <div class="news-item" onclick="navigate(this, '1')> 
-      <h2>Nilai Ekonomi Kurban Tahun 2025 Diproyeksikan Turun Jadi Rp27,1 Triliun, Ada Apa?</h2> 
-      <div class="date">26 Mei 2025</div> 
-      <p>Nilai ekonomi kurban pada momen Idul Adha tahun 2025 diproyeksi menurun dari tahun sebelumnya...</p> 
-    </div> 
-  </div> 
+<div id="content" style="text-align:center; padding: 40px;">
+  <h2>Selamat Datang di Warganet News</h2>
+  <p>Klik sebuah berita untuk membuka konten.</p>
 </div>
+
 <!-- Footer -->
 <footer>
   <h3>Berita Viral Hari Ini</h3>
@@ -205,46 +149,6 @@ footer h3 {
 </div>
 
 <!-- JS -->
-<script>
-  const articles = {
-    "1": {
-      title: "Nilai Ekonomi Kurban Tahun 2025 Diproyeksikan Turun Jadi Rp27,1 Triliun, Ada Apa?",
-      date: "26 Mei 2025",
-      image: "https://i.im.ge/2025/05/24/kurban2025.jpg",
-      content: `Nilai ekonomi kurban pada momen Idul Adha tahun 2025 diproyeksi menurun dari tahun sebelumnya.
-Pendapatan pedagang hewan kurban, daging, dan perlengkapan terkait mengalami penurunan signifikan.
-Para ahli ekonomi menyebut bahwa faktor inflasi dan daya beli masyarakat menjadi penyebab utama.
-Meskipun demikian, antusiasme masyarakat tetap ada, namun dengan skala lebih kecil.
-Beberapa program subsidi pemerintah juga turut membantu pedagang tetap bertahan.
-Prediksi ini menjadi perhatian bagi sektor ekonomi mikro di seluruh Indonesia.
-Pedagang berharap tren ini bisa membaik pada Idul Adha tahun berikutnya.`
-    },
-    "2": {
-      title: "Kasus Baru Influenza Musim Panas, Pemerintah Imbau Warga Waspada",
-      date: "25 Mei 2025",
-      image: "https://i.im.ge/2025/05/24/influenza.jpg",
-      content: `Pemerintah mengimbau masyarakat untuk menjaga kebersihan dan menghindari kerumunan.
-Kasus influenza tercatat meningkat di beberapa wilayah, terutama di kota-kota besar.
-Petugas kesehatan menekankan pentingnya vaksinasi dan protokol kesehatan.
-Sekolah dan tempat umum diminta untuk memperhatikan ventilasi dan sanitasi.
-Masyarakat diimbau segera memeriksakan diri jika mengalami gejala demam dan batuk.
-Informasi terbaru akan terus diperbarui melalui kanal resmi pemerintah.`
-    }
-  };
-
-  function navigate(id) {
-    const article = articles[id];
-    const container = document.querySelector('.container');
-    container.innerHTML = `
-      <div class="news-item">
-        <img src="${article.image}" alt="${article.title}">
-        <h2>${article.title}</h2>
-        <div class="date">${article.date}</div>
-        <p>${article.content}</p>
-      </div>
-    `;
-  }
-</script>
 <script>
   window.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("welcomePopup");
