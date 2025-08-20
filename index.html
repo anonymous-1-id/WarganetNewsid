@@ -1,279 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berita Viral Hari Ini</title>
+  <link rel="icon" href="https://i.im.ge/2025/05/24/vzYAyM.warganetnews.png" type="image/x-icon">
 
-<!DOCTYPE html>  <html lang="id">  
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1" />  
-  <title>Berita Viral Hari Ini</title>  
-  <link rel="icon" href="https://i.im.ge/2025/05/24/vzYAyM.warganetnews.png" type="image/x-icon">  
-  <!-- Google Tag Manager -->  
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],  
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=  
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  
-})(window,document,'script','dataLayer','GTM-5WN5CM9T');</script>  
-<!-- End Google Tag Manager -->  
-</head>  
-  <!-- Google tag (gtag.js) -->  
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8PXES150P"></script>  
-<script>  
-  window.dataLayer = window.dataLayer || [];  
-  function gtag(){dataLayer.push(arguments);}  
-  gtag('js', new Date());  gtag('config', 'G-G8PXES150P');
+<!-- Google Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8PXES150P"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-G8PXES150P');</script>
+
+<style>
+body{font-family:'Segoe UI',sans-serif;background:#f9f9f9;margin:0;padding:0;color:#333;}
+header { background: #007acc; color: white; display: flex; align-items: center; padding: 20px; flex-wrap: wrap; }
+  .logo { margin-right: 20px; }
+  .logo img { height: 60px; border-radius: 10px; }
+  .header-text { flex: 1; }
+  .header-text h1 { margin: 0; font-size: 2em; }
+  .header-text p  { margin-top: 5px; font-size: 0.95em; color: #d0e9ff; }
+
+.container{max-width:900px;margin:auto;padding:30px 20px;}
+.news{display:flex;flex-direction:column;gap:20px;}
+.news-item{background:white;padding:20px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.05);cursor:pointer;opacity:0;transform:translateY(20px);}
+.news-item:hover{transform:translateY(-5px) scale(1.02)}
+.news-item h2{margin:0;font-size:1.3em;color:#007acc;}
+
+footer{ background:#007acc; color:#ccc; text-align:center; padding:30px 20px; margin-top:60px;}
+  footer h3{ margin-top:0; color:#fff;}
+
+  .social a{ color:#fff; margin:0 5px; text-decoration:none; font-weight:bold;}
+  .social a:hover{ text-decoration:underline;}
+
+.back-btn{background:#007acc;color:white;padding:10px 30px;border-radius:6px;margin-top:30px;display:inline-block;}
+
+.news-img{width:100%;border-radius:10px;margin:20px 0;}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/6285168841110?text=Halo%20Customer%20Service%20WarganetNews.Id" class="cs-float" target="_blank" rel="noopener">
+<img src="https://img.icons8.com/ios-filled/50/ffffff/customer-support.png" style="width:30px;height:30px;" alt="CS Icon" />
+</a>
+<style>
+.cs-float{ position:fixed; width:60px; height:60px; bottom:20px; right:20px; background:#007bff; display:flex; justify-content:center; align-items:center; border-radius:50%; box-shadow:2px 2px 10px rgba(0,0,0,0.3); z-index:999; transition:transform 0.3s;}
+.cs-float:hover{ transform:scale(1.1);}
+</style>
+<header>
+  <div class="logo"><img src="https://i.im.ge/2025/05/24/vzYAyM.warganetnews.png" alt="Logo"/></div>
+  <div class="header-text">
+    <h1>Warganet News</h1>
+    <p>Suara Netizen, Fakta Viral!!</p>
+  </div>
+</header>
+
+<div class="container" id="listBerita">
+  <div class="news">
+    <div class="news-item" data-id="1">
+      <h2>Negosiasi Traktat Plastik Global Kembali Gagal</h2>
+      <div class="date">19 Agustus 2025</div>
+      <p>Dalam pembicaraan internasional di Jenewa, putaran keenam negosiasi traktat plastik global kembali gagal mencapai kata sepakat...</p>
+    </div>
+  
+  </div>
+</div>
+
+<div class="container" id="detailBerita" style="display:none;"></div>
+
+<footer>
+  <h3>Berita Viral Hari Ini</h3>
+  <div class="social">
+    <a href="https://instagram.com/warganetnews.id" target="_blank">Instagram</a> |
+    <a href="https://www.tiktok.com/@warganetnews.id" target="_blank">TikTok</a>
+  </div>
+  <div class="contact">
+    Hubungi kami: <a href="mailto:warganetnews.id@gmail.com">warganetnews.id@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+const beritaData = {
+  1:{
+    title:"Negosiasi Traktat Plastik Global Kembali Gagal",
+img:"https://media.voguebusiness.com/photos/68a462457ee29c8c3a9f167e/2:3/w_960,c_limit/plastic-vogueb-aug19-story.jpg",
+date:"19 Agustus 2025",
+content: `
+   <p>Dalam pembicaraan internasional di Jenewa, putaran keenam negosiasi traktat plastik global kembali gagal mencapai kata sepakat. Banyak negara maju yang memiliki industri petrokimia besar menolak pembatasan produksi plastik baru, sementara negara-negara berkembang mendesak agar adanya keadilan dalam tanggung jawab global atas polusi plastik yang semakin memburuk.</p>
+
+   <p>Sejumlah organisasi lingkungan menyatakan kekecewaannya karena perundingan tersebut justru didominasi oleh lobi industri bahan bakar fosil dan perusahaan kimia, yang terus menekan agar ketentuan traktat dibuat longgar. Mereka menilai bahwa kegagalan ini menunjukkan minimnya komitmen politik untuk mengatasi krisis sampah plastik secara serius.</p>
+
+   <p>Delegasi negara-negara kepulauan kecil yang terdampak langsung oleh polusi laut menyebut hasil negosiasi ini sebagai kemunduran tragis. Mereka menilai bahwa tanpa adanya batasan tegas terhadap produksi plastik global, negara-negara tersebut akan terus menjadi korban utama pencemaran laut, kerusakan ekosistem, dan berkurangnya mata pencaharian nelayan tradisional.</p>
+
+   <p>PBB sebagai fasilitator negosiasi menyatakan akan menjadwalkan pertemuan lanjutan tahun depan, tetapi sejumlah pakar menilai ketidaksepakatan yang begitu mendasar antar negara membuat peluang keberhasilan semakin kecil. Padahal, dunia membutuhkan kerangka hukum internasional yang kuat untuk membatasi produksi plastik sebelum polusi plastik mencapai titik yang tidak lagi dapat dibalikkan.</p>
+
+   <p>Meskipun begitu, para aktivis berharap tekanan publik global bisa memaksa para pemimpin dunia untuk mengambil langkah lebih tegas. Mereka menyerukan agar masyarakat internasional terus bersuara lantang, karena hanya dengan tekanan politik dan sosial yang kuat, kebijakan lingkungan yang ambisius bisa diterapkan demi melindungi generasi mendatang dari krisis plastik yang semakin parah.</p>
+`
+  },
+};
+
+function backList(){
+  document.getElementById("listBerita").style.display="block";
+  document.getElementById("detailBerita").style.display="none";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+document.querySelectorAll(".news-item").forEach((item,i)=>{
+  setTimeout(()=>{ item.style.opacity=1; item.style.transform="translateY(0)"; },100*i);
+
+  item.addEventListener("click",()=>{
+    const id = item.dataset.id;
+    const data = beritaData[id];
+    const detail = `
+      <h2>${data.title}</h2>
+      <img class="news-img" src="${data.img}" alt="gambar utama">
+       <div class="date">${data.date}</div>
+      <p>${data.content}</p>
+      <div onclick="backList()" class="back-btn">← Kembali</div>
+    `;
+    document.getElementById("detailBerita").innerHTML = detail;
+    document.getElementById("listBerita").style.display="none";
+    document.getElementById("detailBerita").style.display="block";
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+});
 </script>
 
-  <style>  
-    body {  
-      font-family: 'Segoe UI', sans-serif;  
-      background: #f9f9f9;  
-      margin: 0;  
-      padding: 0;  
-      color: #333;  
-    }  
-  
-    header {  
-      background: #007acc;  
-      color: white;  
-      display: flex;  
-      align-items: center;  
-      padding: 20px;  
-      flex-wrap: wrap;  
-    }  
-  
-    .logo {  
-      margin-right: 20px;  
-    }  
-  
-    .logo img {  
-      height: 60px;  
-      border-radius: 10px;  
-    }  
-  
-    .header-text {  
-      flex: 1;  
-    }  
-  
-    .header-text h1 {  
-      margin: 0;  
-      font-size: 2em;  
-    }  
-  
-    .header-text p {  
-      margin-top: 5px;  
-      font-size: 0.95em;  
-      color: #d0e9ff;  
-    }  
-  
-    .container {  
-      max-width: 900px;  
-      margin: auto;  
-      padding: 30px 20px;  
-    }  
-  
-    .news {  
-      display: flex;  
-      flex-direction: column;  
-      gap: 20px;  
-    }  
-  
-    .news-item {  
-      background: white;  
-      padding: 20px;  
-      border-radius: 10px;  
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);  
-      transition: 0.3s ease;  
-      cursor: pointer;  
-      opacity: 0;  
-      transform: translateY(20px);  
-    }  
-  
-    .news-item:hover {  
-      transform: translateY(-5px) scale(1.02);  
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  
-    }  
-  
-    .news-item h2 {  
-      margin: 0;  
-      font-size: 1.3em;  
-      color: #007acc;  
-    }  
-  
-    .news-item .date {  
-      color: #999;  
-      font-size: 0.9em;  
-      margin-top: 5px;  
-    }  
-  
-    .news-item p {  
-      margin-top: 10px;  
-      color: #444;  
-    }  
-  
-    footer {  
-      background: #007acc;  
-      color: #ccc;  
-      text-align: center;  
-      padding: 30px 20px;  
-      margin-top: 60px;  
-    }  
-  
-    footer h3 {  
-      margin-top: 0;  
-      color: #fff;  
-    }  
-  
-    .social {  
-      margin: 10px 0;  
-    }  
-  
-    .social a {  
-      margin: 0 10px;  
-      color: #ffff;  
-      text-decoration: none;  
-      font-weight: bold;  
-    }  
-  
-    .social a:hover {  
-      text-decoration: underline;  
-    }  
-  
-    .contact {  
-      margin-top: 10px;  
-      font-size: 0.9em;  
-    }  
-  
-    .popup {  
-      position: fixed;  
-      top: 20px;  
-      right: 20px;  
-      background: #007acc;  
-      color: #fff;  
-      padding: 15px 20px;  
-      border-radius: 8px;  
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
-      display: none;  
-      animation: fadeIn 0.8s ease forwards;  
-    }  
-  
-    @keyframes fadeIn {  
-      from { opacity: 0; transform: translateY(-10px); }  
-      to { opacity: 1; transform: translateY(0); }  
-    }  
-  
-    @keyframes slideIn {  
-      from { opacity: 0; transform: translateY(20px); }  
-      to { opacity: 1; transform: translateY(0); }  
-    }  
-  </style>  </head>  
-<body>  <!-- Customer Service Floating Bubble -->
-
-<a href="https://wa.me/6285602438829?text=Halo%20Customer%20Service%20WarganetNews.Id"   
-class="cs-float" target="_blank" rel="noopener">
-<img src="https://img.icons8.com/ios-filled/50/ffffff/customer-support.png" alt="CS Icon" />
-</a>
-
-<style>  
-.cs-float {  
-  position: fixed;  
-  width: 60px;  
-  height: 60px;  
-  bottom: 20px;  
-  right: 20px;  
-  background-color: #007bff;  
-  color: #fff;  
-  border-radius: 50%;  
-  text-align: center;  
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);  
-  z-index: 999;  
-  display: flex;  
-  align-items: center;  
-  justify-content: center;  
-  transition: transform 0.3s ease;  
-}  
-.cs-float:hover {  
-  transform: scale(1.1);  
-}  
-.cs-float img {  
-  width: 30px;  
-  height: 30px;  
-}  
-</style>  <!-- Google Tag Manager (noscript) -->  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WN5CM9T"  
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-<!-- End Google Tag Manager (noscript) -->    <!-- Header -->    <header>  
-    <div class="logo">  
-      <img src="https://i.im.ge/2025/05/24/vzYAyM.warganetnews.png" alt="Logo Blog" />  
-    </div>  
-    <div class="header-text">  
-      <h1>Warganet News</h1>  
-      <p>Suara Netizen, Fakta Viral!!</p>  
-    </div>  
-  </header>   
-  <!-- Konten Berita -->    
-  <div class="container">  
-     <div class="news">  
-      <div class="news-item" >  
-        <h2>Nilai Ekonomi Kurban Tahun 2025 Diproyeksikan Turun Jadi Rp27,1 Triliun, Ada Apa?</h2>  
-        <div class="date">26 Mei 2025</div>  
-        <p>Nilai ekonomi kurban pada momen Idul Adha tahun 2025 diproyeksi menurun dari tahun sebelumnya...</p>  
-      </div>  
-    </div>  
-  </div>  
-  <div class="container">  
-     <div class="news">  
-      <div class="news-item" data-url="https://warganetnews.github.io/berita3">  
-        <h2>Jalur Konvoi Persib Minggu 25 Mei 2025: Pawai Mulai Jam Berapa?</h2>  
-        <div class="date">25 Mei 2025</div>  
-        <p>Konvoi Persib juara Liga 1 2025 akan digelar pada Minggu, 25 Mei. Cek rute lengkap dan jam konvoinya di bawah...</p>  
-      </div>  
-    </div>  
-  </div>  
-  <div class="container">  
-     <div class="news">  
-      <div class="news-item" data-url="https://warganetnews.github.io/berita2">  
-        <h2>Prabowo Puji China yang Konsisten Membela Rakyat Palestina: Membanggakan Kita Semua</h2>  
-        <div class="date">25 Mei 2025</div>  
-        <p>Prabowo menilai bahwa China konsisten dan tetap membela rakyat yang tertindas di seluruh dunia...</p>  
-      </div>  
-    </div>  
-  </div>  
-  <div class="container">  
-    <div class="news">  
-      <div class="news-item" data-url="https://warganetnews.github.io/berita1">  
-        <h2>Indonesia akan luncurkan stimulus ekonomi untuk dorong konsumsi</h2>  
-        <div class="date">24 Mei 2025</div>  
-        <p>JAKARTA, 24 Mei (WargaNetNews) - Indonesia berencana mengumumkan langkah-langkah stimulus ekonomi pada 5 Juni...</p>  
-      </div>  
-    </div>  
-  </div>    <!-- Footer -->    <footer>  
-    <h3>Berita Viral Hari Ini</h3>  
-    <div class="social">  
-      <a href="https://instagram.com/warganetnews.id" target="_blank">Instagram</a> |  
-      <a href="https://www.tiktok.com/@warganetnews.id" target="_blank">TikTok</a>  
-    </div>  
-    <div class="contact">  
-      Hubungi kami: <a href="mailto:warganetnews.id@gmail.com">warganetnews@gmail.com</a>  
-    </div>  
-  </footer>    <!-- Pop-up Selamat Datang -->    <div class="popup" id="welcomePopup">  
-    👋 Selamat datang di Warganet News  
-  </div>    <!-- JavaScript -->    <script>  
-    window.addEventListener("DOMContentLoaded", () => {  
-      const items = document.querySelectorAll(".news-item");  
-      items.forEach((item, index) => {  
-        setTimeout(() => {  
-          item.style.opacity = 1;  
-          item.style.transform = "translateY(0)";  
-          item.style.animation = "slideIn 0.4s ease";  
-        }, 150 * index);  
-  
-        item.addEventListener("click", () => {  
-          const url = item.getAttribute("data-url");  
-          if (url) window.location.href = url;  
-        });  
-      });  
-  
-      const popup = document.getElementById("welcomePopup");  
-      popup.style.display = "block";  
-      setTimeout(() => popup.style.display = "none", 1500);  
-    });  
-  </script>  </body>  
+</body>
 </html>
