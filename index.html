@@ -34,6 +34,7 @@ footer{ background:#007acc; color:#ccc; text-align:center; padding:30px 20px; ma
 .back-btn{background:#007acc;color:white;padding:10px 30px;border-radius:6px;margin-top:30px;display:inline-block;}
 
 .news-img{width:100%;border-radius:10px;margin:20px 0;}
+.popup{ position:fixed; top:20px; right:20px; background:#007acc; color:#fff; padding:15px 20px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1); display:none; animation:fadeIn 0.8s;}
 </style>
 </head>
 <body>
@@ -77,6 +78,7 @@ footer{ background:#007acc; color:#ccc; text-align:center; padding:30px 20px; ma
   </div>
 </footer>
 
+  <div class="popup" id="welcomePopup">👋 Selamat datang di Warganet News</div>
 <script>
 const beritaData = {
   1:{
@@ -121,6 +123,10 @@ document.querySelectorAll(".news-item").forEach((item,i)=>{
     document.getElementById("detailBerita").style.display="block";
     window.scrollTo({top:0,behavior:"smooth"});
   });
+});
+  const pop = document.getElementById("welcomePopup");
+  pop.style.display="block";
+  setTimeout(()=> pop.style.display="none", 1500);
 });
 </script>
 
